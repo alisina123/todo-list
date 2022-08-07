@@ -1,0 +1,6 @@
+{
+    "blogs":[
+      { "name": "alisina", "lastName": "sadat", "id": 1 } ,
+      { "name": "karim", "lastName": "jan", "id": 2 }
+    ]
+}
