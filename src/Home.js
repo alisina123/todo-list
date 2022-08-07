@@ -1,21 +1,24 @@
 import { useState ,useEffect } from "react";
 import BlogList from "./BlogList";
 const Home = () => {
-    const [blogs, setBlog] = useState([
-        { name: 'alisina', lastName: 'sadat', id: 1 },
-        { name: 'karim', lastName: 'jan', id: 2 },
-    ])
+    const [blogs, setBlog] = useState(null)
     const DeleteItem = (id) => {
         const neBlogs = blogs.filter(blog => blog.id !== id);
         setBlog(neBlogs);
     }
     useEffect(()=>{
-        console.log(blogs);
+        fetch(` http://localhost:8000/blogs`)
+        .then(res =>{
+            return res.json();
+        })
+        .then(data =>{
+            setBlog(data);
+        })
     },[])
     return (
         <div className="card">
             <div class="card-body">
-                <BlogList blogs={blogs} DeleteItem={DeleteItem} />
+                { blogs && <BlogList blogs={blogs} DeleteItem={DeleteItem} />}
             </div>
         </div>
     );
