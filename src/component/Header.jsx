@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,6 +15,10 @@ const Header = () => {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Add </a>
+
+                    </li>
+                    <li className="nav-item">
+                    <a className="nav-link"><Link to="/create">Create</Link></a>
                     </li>
                 </ul>
 
