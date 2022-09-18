@@ -2,18 +2,20 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 import UseFetch from "./UseFetch";
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
     
     const [apiData ,setDapiData]=useState(null);
     const [loading ,setLoading]=useState(true);
     const  [error ,setError] =useState(false);
- 
+    const navigate = useNavigate();
     useEffect(() =>{
        
-    const abourSignal =new AbortController();
+    
        setTimeout(() =>{
-        axios.get("http://localhost:8000/blogs" ,{signal:abourSignal.signal}).then((res) =>{
+        axios.get("http://localhost:8000/blogs").then((res) =>{
             //console.log("use effect is triggered");
             //console.log("data" ,res);
             setDapiData(res.data);
@@ -24,10 +26,18 @@ const Home = () => {
             setLoading(false)
             setError(error.message)
         })
-       },1000);
-       return ()=> abourSignal.abort();
+       },1000)
+     
     });
-  
+   const DeleteBtn =() => {
+    
+    fetch('http://localhost:8000/blogs/'+apiData.id,{
+        method:"DELETE"
+    })
+    .then(() => {
+        navigate('/');
+    })
+   }
   
     return (
         <div className="blog-list">
@@ -48,6 +58,7 @@ const Home = () => {
                             <th scope="row">{blog.id}</th>
                             <td>{blog.name}</td>
                             <td>{blog.lastName}</td>
+                            <button onClick={DeleteBtn}>delete</button>
                          
 
                         </tr>
