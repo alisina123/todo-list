@@ -6,6 +6,8 @@ import Home from './Home';
 import Footer from './component/Footer';
 import Create from "./Create";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import Details from './Details';
+import Update from './Update';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="create" element={<Create />} />
+            <Route exact path="details/:id" element={<Details />} />
+            <Route exact path="update/:id" element={<Update />} />
           </Routes>
         </Router>
       </div>
