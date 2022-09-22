@@ -50,7 +50,6 @@ const Home = () => {
                         <th scope="col">Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">LastName</th>
-                        <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                         <th scope="col">Details</th>
                     </tr>
@@ -62,11 +61,6 @@ const Home = () => {
                             <th scope="row">{blog.id}</th>
                             <td>{blog.name}</td>
                             <td>{blog.lastName}</td>
-                            <td>
-                                <Link to={`update/${blog.id}`}>
-                                    Update
-                                </Link>
-                            </td>
                             <td><button onClick={(event) => { DeleteBtn(blog.id) }}>delete</button></td>
                             <td>
                                 <Link to={`details/${blog.id}`}>

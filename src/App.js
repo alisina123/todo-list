@@ -1,13 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './component/Header';
 import './component/Footer';
 import Home from './Home';
-import Footer from './component/Footer';
 import Create from "./Create";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Details from './Details';
-import Update from './Update';
+import NotFound from './NotFound';
 
 function App() {
   return (
@@ -33,7 +31,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="create" element={<Create />} />
             <Route exact path="details/:id" element={<Details />} />
-            <Route exact path="update/:id" element={<Update />} />
+            <Route exact path="*" element={<NotFound />} />
           </Routes>
         </Router>
       </div>

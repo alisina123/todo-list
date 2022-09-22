@@ -1,22 +1,16 @@
 {
   "blogs": [
     {
-      "name": "fdh",
-      "lastName": "fdh",
+      "name": "edsgsd",
+      "lastName": "sdfgs",
       "author": "alisina",
-      "id": 4
+      "id": 8
     },
     {
-      "name": "hdfg",
-      "lastName": "dfh",
+      "name": "sdfgs",
+      "lastName": "sdfgsd",
       "author": "alisina",
-      "id": 5
-    },
-    {
-      "name": "dsgsdf",
-      "lastName": "sdfg",
-      "author": "alisina",
-      "id": 6
+      "id": 9
     }
   ]
 }
